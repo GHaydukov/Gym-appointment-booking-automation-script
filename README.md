@@ -10,4 +10,4 @@ A python script used to automate an online form of my local university gym.
 
 4. The script then fills the necessary fields.
 
-5. At the a confirmation is being printed out in the console, signaling that the booking was successful.
+5. At the end a confirmation message is being printed out in the console, signaling that the booking was successful.
