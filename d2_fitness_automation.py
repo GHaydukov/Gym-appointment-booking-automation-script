@@ -42,13 +42,13 @@ appointment_hours = [
 ]
 
 # In Python, weekday() can be used to retrieve the day of the week. The datetime.today() method returns the current
-# date, and the weekday() method returns the day of the week as an integer where Monday is indexed as 0 and Sunday is 6
+# date, and the weekday() method returns the day of the week as an integer where Monday is indexed as 0 and Sunday is 6.
 current_day = datetime.datetime.today().weekday()
 
 # Formatted to show the hours and the minutes.
 current_time = datetime.datetime.now().strftime("%H:%M")
 
-print("Hello, ma friend!\nThose are your available training sessions for today.")
+print("Hello, ma friend!\nThose are your available training sessions for today:")
 
 appointment_today = []
 
@@ -77,7 +77,7 @@ for number, appointment in enumerate(appointment_hours):
             print(f"{number + 1}. {appointment}")
             appointment_today.append(number + 1)
 
-print("\nHello again, ma friend!\nThose are your available training sessions for tomorrow.")
+print("\nHello again, ma friend!\nThose are your available training sessions for tomorrow:")
 
 # List with the choices available tomorrow. We will use that below for the column_index.
 appointment_tomorrow = []
@@ -125,7 +125,7 @@ if appointment_choice in appointment_today or appointment_choice in appointment_
     row_index = appointment_choice + 1
 else:
     print("Invalid choice")
-
+ 
 # Setting the correct column index if the appointment is tomorrow.
 if appointment_choice in appointment_tomorrow:
     column_index += 1
