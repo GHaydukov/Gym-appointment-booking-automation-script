@@ -2,7 +2,7 @@
 
 A python script used to automate an online form of my local university gym in Germany.
 
-P.S The website form is in Germany, that's why some button names are in German.
+P.S The website form is in German, that's why the button names are also in German.
 
 1. The script starts with installing Chrome Driver.
 
