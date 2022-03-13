@@ -80,7 +80,7 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
         # Checks weekdays.
         if current_day >= 4:
             # Excludes the hours that are not available on Friday, Saturday and Sunday.
-            if appointment_number == 0 or appointment_number == 6:
+            if appointment_number == 1 or appointment_number == 7:
                 continue
 
             # Checks if you have the option to book the appointment.
@@ -112,7 +112,7 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
         # Checks weekdays.
         if 4 <= current_day + 1 <= 6:
             # Excludes the hours that are not available on Friday, Saturday and Sunday.
-            if appointment_number == 0 or appointment_number == 6:
+            if appointment_number == 1 or appointment_number == 7:
                 continue
 
             # Checks if you have the option to book the appointment on the next day.
@@ -127,7 +127,6 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
                 # appointment_tomorrow.append(appointment_number)
                 appointment_booked_tomorrow.add(appointment_number)
 
-        # Checks weekdays
         else:
             # Checks if you can make an appointment in the working days.
             if current_time >= appointment_options[appointment_number][6:]:
