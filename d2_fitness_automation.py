@@ -88,7 +88,6 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
             # This should not be possible and therefore should not be printed out.
             if current_time <= appointment_options[appointment_number][:5]:
                 print(f"{appointment_number}. {appointment_options[appointment_number]}")
-                # appointment_today.append(appointment_number)
                 appointment_booked_today.add(appointment_number)
 
         # Checks working days.
@@ -98,7 +97,6 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
             # This should not be possible and therefore should not be printed out.
             if current_time <= appointment_options[appointment_number][:5]:
                 print(f"{appointment_number}. {appointment_options[appointment_number]}")
-                # appointment_today.append(appointment_number)
                 appointment_booked_today.add(appointment_number)
 
     print("\nHello again, ma friend!\nThose are your available training sessions for tomorrow:")
@@ -108,7 +106,7 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
 
         # Checks what is the next day
         # current_day + 1 <= 6 is written, because if the current day is Sunday,
-        # we want our program to print the available appointments of Monday and we go in the else block.
+        # we want our program to print the available appointments of Monday, and we go in the else block.
         # Checks weekdays.
         if 4 <= current_day + 1 <= 6:
             # Excludes the hours that are not available on Friday, Saturday and Sunday.
@@ -124,14 +122,12 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
             # out.
             if current_time >= appointment_options[appointment_number][6:]:
                 print(f"{appointment_number}. {appointment_options[appointment_number]}")
-                # appointment_tomorrow.append(appointment_number)
                 appointment_booked_tomorrow.add(appointment_number)
 
         else:
             # Checks if you can make an appointment in the working days.
             if current_time >= appointment_options[appointment_number][6:]:
                 print(f"{appointment_number}. {appointment_options[appointment_number]}")
-                # appointment_tomorrow.append(appointment_number)
                 appointment_booked_tomorrow.add(appointment_number)
 
     # Click on the chosen "buchen" button.
@@ -151,6 +147,13 @@ while not appointment_booked_tomorrow == {} and not appointment_booked_today == 
     # Setting the correct column index. It is dependent on the next day!
     # + 1, because it's tomorrow.
     if appointment_choice in appointment_booked_tomorrow:
+
+        # Checks to see if it is Sunday. If it is Sunday,
+        # the column_index will be 7 and in order for the program to work,
+        # it has to be reset to 0, because tomorrow it is going to be Monday
+        if column_index == 7:
+            column_index = 0
+
         column_index += 1
 
     # That gives us the second tab back.
