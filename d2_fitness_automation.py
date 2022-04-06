@@ -24,7 +24,7 @@ driver.get("https://www.hochschulsport.uni-mannheim.de/angebote/aktueller_zeitra
 time.sleep(1)
 
 # Accept the cookie pop up.
-accept_cookies = driver.find_element(By.XPATH, value='//*[@id="page-25673"]/div[3]/div[2]')
+accept_cookies = driver.find_element(By.XPATH, value='//*[@id="page-25673"]/div[4]/div[2]')
 accept_cookies.click()
 
 # Just in case it doesn't find the "buchen" button again, because
