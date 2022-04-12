@@ -2,8 +2,9 @@
 # functional for all browsers, works on all major OS and its scripts are written in various languages i.e Python,
 # Java, C#, etc, we will be working with Python.
 import datetime
-import time
+import os
 
+import time
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -61,7 +62,7 @@ appointment_booked_tomorrow = {1}
 # appointment_tomorrow = []
 
 # E-Mail is created here, because of scope.
-email = "georgi.haydukov99@gmail.com"
+email = os.environ.get('EMAIL_USER')
 
 # Helps to identify the index of the days
 counter = 0
